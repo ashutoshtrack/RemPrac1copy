@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context="com.remprac1.ashutosh.remprac1.MainActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/doctitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="28dp"
+            android:ems="10"
+            android:hint="Document Name..."
+            android:inputType="text"
+            tools:layout_editor_absoluteX="8dp"
+            tools:layout_editor_absoluteY="16dp" />
+
+        <EditText
+            android:id="@+id/amount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/doctitle"
+            android:layout_marginTop="18dp"
+            android:ems="10"
+            android:hint="Document Amount"
+            android:inputType="numberDecimal" />
+
+        <EditText
+            android:id="@+id/dateset"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/amount"
+            android:layout_marginLeft="7dp"
+            android:layout_marginStart="7dp"
+            android:layout_marginTop="20dp"
+            android:ems="10"
+            android:hint="Due Date"
+            android:inputType="date" />
+
+        <ImageButton
+            android:id="@+id/cal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/dateset"
+            android:layout_marginLeft="18dp"
+            android:layout_marginStart="18dp"
+            android:layout_toEndOf="@+id/dateset"
+            android:layout_toRightOf="@+id/dateset"
+            android:background="@android:color/transparent"
+            app:srcCompat="@android:drawable/ic_menu_my_calendar" />
+
+        <Spinner
+            android:id="@+id/spinner"
+            android:layout_width="200dp"
+            android:layout_height="40dp"
+            android:layout_below="@+id/dateset"
+            android:layout_marginLeft="7dp"
+            android:layout_marginStart="7dp"
+
+            android:layout_marginTop="13dp"
+            android:background="?attr/colorControlHighlight"
+            android:hint="Reminder Date" />
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="18dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/spinner"
+            android:layout_marginLeft="12dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="21dp"
+            android:text="Scan Here"
+            android:textSize="20sp" />
+
+        <ImageButton
+            android:id="@+id/daba"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/textView1"
+            android:layout_alignStart="@+id/textView1"
+            android:layout_below="@+id/textView1"
+            android:layout_marginLeft="19dp"
+            android:layout_marginStart="19dp"
+            android:layout_marginTop="11dp"
+            android:background="@android:color/transparent"
+            android:onClick="camerabuttonpressed"
+            app:srcCompat="@android:drawable/ic_menu_camera" />
+
+        <ImageView
+            android:id="@+id/imgdikha"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_alignEnd="@+id/cal"
+            android:layout_alignRight="@+id/cal"
+            android:layout_alignTop="@+id/textView1"
+            android:layout_marginEnd="37dp"
+            android:layout_marginRight="37dp"
+            app:srcCompat="@color/colorPrimaryDark" />
+
+        <RadioGroup
+            android:id="@+id/radioGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/daba"
+            android:layout_alignStart="@+id/daba"
+            android:layout_below="@+id/daba"
+            android:layout_marginTop="33dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/radioDefault"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="DefaultTimeClicke"
+
+                android:text="Default Time" />
+
+            <RadioButton
+                android:id="@+id/radioCustom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="CustomTimeClicke"
+                android:text="Custom Time" />
+        </RadioGroup>
+
+        <EditText
+            android:id="@+id/notes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/textView1"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignStart="@+id/textView1"
+            android:layout_below="@+id/radioGroup"
+            android:layout_marginTop="15dp"
+
+            android:ems="10"
+            android:hint="Short Note"
+            android:inputType="textMultiLine" />
+
+        <EditText
+            android:id="@+id/urldala"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/dateset"
+            android:layout_alignLeft="@+id/notes"
+            android:layout_alignRight="@+id/dateset"
+            android:layout_alignStart="@+id/notes"
+            android:layout_below="@+id/notes"
+            android:layout_marginTop="15dp"
+            android:ems="10"
+            android:hint="URL"
+            android:inputType="textPersonName" />
+
+        <ImageButton
+            android:id="@+id/webkhol"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/urldala"
+            android:layout_toLeftOf="@+id/cal"
+            android:layout_toStartOf="@+id/cal"
+            android:background="@android:color/transparent"
+            android:onClick="webkholdia"
+            app:srcCompat="@android:drawable/ic_menu_send" />
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/urldala"
+            android:layout_marginTop="12dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/cancelbaby"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.01"
+                android:onClick="CancelAlarm"
+
+                android:text="Cancel" />
+
+            <Button
+                android:id="@+id/btnAdder"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="AlarmSaver"
+                android:text="Save" />
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+</ScrollView>
